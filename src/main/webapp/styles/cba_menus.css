@@ -1,0 +1,94 @@
+.menu {
+	MARGIN: 0px auto; WIDTH: 100%; TEXT-ALIGN: left
+}
+
+#nav, #nav ul {
+	float: left;
+	/* width: 36em; */
+	width: 100%;
+	list-style: none;
+	line-height: 1;
+	/* background: #fff; */
+	background: #E8E8E8;
+	font-weight: bold;
+	padding: 0;
+	/* border: solid #eda; */
+	border: solid #CCC;
+	/* border-width: 1px 0; */
+	border-width: 1px;
+	margin: 0 0 1em 0;
+	box-shadow: 3px 3px 5px #999;
+	-moz-box-shadow: 3px 3px 5px #999;
+	-webkit-box-shadow: 3px 3px 5px #999;
+	-webkit-border-radius: 3px;
+}
+
+#nav A {
+	PADDING-RIGHT: 2em; DISPLAY: block; PADDING-LEFT: 2em; PADDING-BOTTOM: 0.25em; WIDTH: 6em; COLOR: #333; PADDING-TOP: 0.25em; TEXT-DECORATION: none
+}
+#nav A.daddy {
+	BACKGROUND: url(/media/rightarrowred.gif) no-repeat right center
+}
+#nav LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 10em; PADDING-TOP: 0px
+}
+#nav LI UL {
+	BORDER-TOP-WIDTH: 0.25em; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 0.25em; BACKGROUND: #fff; LEFT: -999em; BORDER-BOTTOM-WIDTH: 0.25em; MARGIN: 0px; WIDTH: 13.9em; POSITION: absolute; HEIGHT: auto; BORDER-RIGHT-WIDTH: 0.25em; opacity: .95
+}
+#nav LI LI {
+	PADDING-RIGHT: 1em; WIDTH: 13em
+}
+#nav LI UL A {
+	WIDTH: 9em
+}
+#nav LI UL UL {
+	MARGIN: -1.7em 0px 0px 13.95em
+}
+#nav LI:hover UL UL {
+	LEFT: -999em
+}
+#nav LI:hover UL UL UL {
+	LEFT: -999em
+}
+#nav LI.sfhover UL UL {
+	LEFT: -999em
+}
+#nav LI.sfhover UL UL UL {
+	LEFT: -999em
+}
+#nav LI:hover UL {
+	LEFT: auto
+}
+#nav LI LI:hover UL {
+	LEFT: auto
+}
+#nav LI LI LI:hover UL {
+	LEFT: auto
+}
+#nav LI.sfhover UL {
+	LEFT: auto
+}
+#nav LI LI.sfhover UL {
+	LEFT: auto
+}
+#nav LI LI LI.sfhover UL {
+	LEFT: auto
+}
+#nav LI:hover {
+	BACKGROUND: #ccc
+}
+#nav LI.sfhover {
+	BACKGROUND: #ccc
+}
+#nav LI:hover {
+	POSITION: static
+}
+#nav LI.hover {
+	POSITION: static
+}
+UL.nav IFRAME {
+	Z-INDEX: -1; FILTER: progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0); LEFT: -0.25em; POSITION: absolute; TOP: -0.25em
+}
+ HTML UL.nav LI {
+	Z-INDEX: 201
+}

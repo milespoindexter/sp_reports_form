@@ -1,0 +1,160 @@
+/* style sheet for Bon Appetite Rights & Permissions app */
+
+
+div.searchForm {
+	clear: both;
+	text-align: right;
+	padding: 2px 0px 3px 0px;
+	margin: 0px 5px 0px 5px;
+	border-bottom: 1px #b6b9be solid;
+}
+
+div.search {
+	clear: both;
+	width: 810px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	border-top: 1px #778899 solid;
+	
+}
+
+div.formControls {
+	clear: both;
+	border: 1px #b6b9be solid;
+	background-color: #D3D3D3;
+	padding: 5px 5px 3px 5px;
+	margin: 10px 5px 5px 5px;
+	text-align: right;
+	box-shadow: 3px 3px 5px #999;
+	-webkit-box-shadow: 3px 3px 5px #999;
+	-webkit-border-radius: 3px;
+}
+
+
+.key {
+	text-align: right;
+	vertical-align: middle;
+	padding:0px 0px 0px 5px;
+	text-decoration: none;
+}
+
+.val {
+	text-align: left;
+	/* border: 1px b6b9be solid; */
+	padding: 0px 0px 0px 5px;
+}
+
+div.formCol {
+	float: left;
+	text-align: left;
+	/* border: 1px #b6b9be solid; */
+}
+
+div.formRow {
+	clear: both;
+	margin: 5px 0px 5px 0px;
+	padding: 0px 0px 0px 0px;
+	/* border: 2px #b6b9be solid; */
+	text-align: left;
+	vertical-align: middle;
+}
+
+
+label {
+	float: left;
+	width: 150px;
+	margin-right: 4px;
+	font-weight: bold;
+	/* padding-top: 4px; */
+	text-align: right;
+	/* border: 1px #b6b9be solid; */
+}
+
+
+ol {
+	margin: 0px;
+	list-style: none;
+}
+
+ol li {
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+
+
+div.resultTable {
+	clear: both;
+	margin: 10px 5px 5px 5px;
+}
+
+
+.sublegend {
+	_position : absolute;
+	_top : -10px;
+	border: 1px #b6b9be solid;
+	background: #E6E6FA;
+	color: #666;
+	font-weight: bold;
+	font-size: 11px;
+	padding: 3px 5px 4px 5px;
+	margin: 0px 0px 5px 0px;
+	line-height: 11px;
+}
+
+
+.subsection {
+	_position : relative;  /* The underscore means only IE will see it */
+	_padding-top : 20px;   /* Stupid IE */
+	_padding-bottom : 15px;
+	_display : block;
+	background-color: #DCDCDC;
+	text-align: left;
+	clear: both;
+	padding: 4px 8px 8px 8px;
+	margin: 20px 5px 8px 5px;
+	border: 1px #b6b9be solid;
+
+}
+
+.activeDot {
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 8px;
+}
+
+.admControls {
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 10px;
+}
+
+
+.warn {
+	border-right: 1px solid #778899;
+	border-bottom: 1px solid #778899;
+	padding: 1px 4px 1px 8px;
+	background: #FFF0F5;
+	color: #800000;
+}
+
+.alert {
+	color: #800000;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.subhead {
+	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;
+}
+
+.tableTitle {
+	letter-spacing: 6px;
+	color: #036;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+	text-transform: uppercase;
+}

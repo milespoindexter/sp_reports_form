@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>$applicationName</title>
+
+<link rel="stylesheet" media="all" type="text/css" href="styles/cba.css" />
+<link rel="stylesheet" media="all" type="text/css" href="styles/cba_menus.css" />
+<link rel="stylesheet" media="all" type="text/css" href="styles/spReports.css" />
+
+<script type="text/javascript" src="scripts/checkAll.js"></script>
+<!--[if lt IE 7]><script type="text/javascript" src="scripts/iehover-fix.js"></script><![endif]-->
+
+</head>
+<body>
+
+<div class="header">
+<div id="topLeft">
+<div id="appName">$applicationName</div>
+</div>
+
+<span class="cnLogo">
+<img src="media/cnLogo200px.png" border="0px" width="200px" border="1px">
+</span>
+</div>
+
+
+<!-- end of header -->

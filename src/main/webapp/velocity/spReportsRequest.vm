@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<spMultiReportRequest>
+    <reportType>$reportType</reportType>
+    <email>$email</email>
+    <fileName>$fileName</fileName>
+    <startDate>$startDate</startDate>
+    <endDate>$endDate</endDate>
+    <saveToDb>true</saveToDb>
+    <sendTrigger>false</sendTrigger>
+    <reportRequests>
+    #foreach( $req in $reportRequests )
+        <request orgCode="$req.orgCode" startDate="#if($req.startDate)$req.startDate#else$startDate#end" endDate="#if($req.endDate)$req.endDate#else$endDate#end"/>
+    #end
+    </reportRequests>
+</spMultiReportRequest>

@@ -1,0 +1,130 @@
+#parse( "header.vm" )
+
+
+<form name="spRR" id="spRR" action="form" method="POST">
+
+<div id="rrc" class="formControls" style="text-align: left;">
+    <input type="button" name="chkAll" value="Check All" onClick="checkAll(document.spRR.getReport)" />
+    &nbsp;&nbsp;&nbsp;
+    <input type="button" name="unchkAll" value="Uncheck All" onClick="uncheckAll(document.spRR.getReport)" />
+    
+    <div width="30%" style="float: right; text-align: right">
+        Report types:&nbsp;
+        <input type="checkbox" name="reportType" value="GetAggregateTrackingForOrg" checked="checked">Aggregate Tracking</input>&nbsp;
+        <input type="checkbox" name="reportType" value="GetSentMailingsForOrg" checked="checked">Sent Mailings</input>
+        &nbsp;&nbsp;&nbsp;
+        <input type="submit" name="getReports" value="Get Reports" />
+    </div>
+    
+    <!-- div class="clearDivs">&nbsp;</div -->
+</div>
+
+<div id="rrc2" class="formControls" style="text-align: left;">
+    <ol>
+        <li>
+            <label for="fileName">File name:</label>
+            <input type="text" size="50" name="fileName" value="$!fileName"/>
+            #if($fileNameNotValid == 'true')
+                <span class="alert" style="font-size: 14px;">&nbsp;!</span>
+            #end
+            &nbsp;&nbsp;&nbsp;This is the name of the .csv file that will be created or appended to. Location: /app/silverpop/reports/
+        </li>
+        <li>
+            <label for="email">Email:</label>
+            <input type="text" size="50" name="email" value="$!email"/>
+            #if($emailNotValid == 'true')
+                <span class="alert" style="font-size: 14px;">&nbsp;!</span>
+            #end
+            &nbsp;&nbsp;&nbsp;A status update mail will be sent to this address when process is completed.
+        </li>
+    
+        <li>
+            <label for="startDate">Start Date:</label>
+            <input type="text" size="50" name="startDate" value="$startDate"/>
+            #if($badDates.contains("startDate"))
+                <span class="alert" style="font-size: 14px;">&nbsp;!</span>
+            #end
+            &nbsp;&nbsp;&nbsp;To over-ride this for an individual report, add date to the Start Date field for that report. &nbsp;Format: MM/DD/YYYY
+        </li>
+        
+        <li>
+            <label for="endDate">End Date:</label>
+            <input type="text" size="50" name="endDate" value="$endDate"/>
+            #if($badDates.contains("endDate"))
+                <span class="alert" style="font-size: 14px;">&nbsp;!</span>
+            #end
+            &nbsp;&nbsp;&nbsp;To over-ride this for an individual report, add date to the End Date field for that report. &nbsp;Format: MM/DD/YYYY
+        </li>
+    
+    </ol>
+</div>
+
+<div>&nbsp;<br></div>
+
+#if ($success == 'false')
+    <div id="errorMsg">
+        Request could not be submitted. Please check form information for problems.
+        #if ($requestListEmpty == 'true')
+        No Reports have been selected. 
+        #end
+        #if ($emailNotValid == 'true')
+        Email address is not valid. 
+        #end
+        #if ($datesNotValid == 'true')
+        Some dates appear to be invalid. Please check their formatting.
+        #end
+        #if ($fileNameNotValid == 'true')
+        File name can only contain letters, numbers, underscores, dots and dashes.
+        #end
+        
+        <div class="clearDivs">&nbsp;</div>
+    </div>
+#elseif ($success == 'true')
+    <div id="msg">
+        Requests for #foreach( $rt in $reportTypes ) $rt #end reports have been submitted for the following Orgs:<br>
+        #foreach( $req in $requests )
+            $req.orgCode<br>
+        #end
+        
+        <div class="clearDivs">&nbsp;</div>
+    </div>
+#end
+    
+    #foreach( $rep in $reports )
+    <fieldset class="results">
+    <legend class="resultsMsg"><input type="checkbox" name="getReport" value="$rep.orgCode"  #if($requestCodes.contains($rep.orgCode)) checked#end /> Report: $rep.orgCode </legend>
+
+    <div class="formRow" style="width: 90%;">
+    <ol>
+
+    <li>
+        <label for="startDate_$rep.orgCode">Start Date:</label>
+        <input type="text" size="50" name="startDate_$rep.orgCode" value="$!rep.startDate"/>
+        #if($badDates.contains("startDate_$rep.orgCode"))
+            <span class="alert" style="font-size: 14px;">&nbsp;!</span>
+        #end
+        &nbsp;&nbsp;&nbsp;Format: MM/DD/YYYY
+    </li>
+    
+    <li>
+        <label for="endDate_$rep.orgCode">End Date:</label>
+        <input type="text" size="50" name="endDate_$rep.orgCode" value="$!rep.endDate"/>
+        #if($badDates.contains("endDate_$rep.orgCode"))
+            <span class="alert" style="font-size: 14px;">&nbsp;!</span>
+        #end
+        &nbsp;&nbsp;&nbsp;Format: MM/DD/YYYY
+    </li>
+    
+    </ol>
+    </div><!-- end formCol div -->
+        <!-- div class="clearDivs">&nbsp;</div -->
+    </fieldset>
+
+    #end
+    
+    <div id="rrc" class="formControls">
+        <input type="submit" name="getReports" value="Get Reports" />
+    </div>
+</form>
+
+#parse( "footer.vm" )
